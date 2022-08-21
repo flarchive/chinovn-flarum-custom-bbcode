@@ -1,0 +1,137 @@
+
+.cb-box-shadow {
+  box-shadow: 	0px 2px 2px 0px rgba(128,128,128,0.2), 0px 3px 1px -2px rgba(128,128,128,0.2), 0px 1px 5px 0px rgba(128,128,128,0.2) !important;
+  padding: 10px;
+  margin: 10px;
+}
+
+.cb-background-color {
+    mix-blend-mode: normal;
+    padding: 20px 25px 5px;
+}
+
+.cb-mark {
+  background-color: yellow; 
+  color: black;
+}
+
+
+.cb-columns {
+  column-width: 375px; 
+  column-gap: 10px; 
+  width: 100%; 
+  max-width: 760px; 
+  margin: 0 auto;
+}
+
+figure.cb-figure {
+  margin: 0px; 
+  padding-bottom: 10px; 
+  break-inside: avoid;
+}
+
+
+.cb-line-break {
+  height: 20px;
+  width: 100%;
+  clear: both;
+}
+
+
+.cb-nsfw {
+    color: #aaa;
+    position: relative;
+}
+.cb-nsfw-hide {
+    background: rgba(0,0,0,0.97) !important;
+    font-size: 16px;
+    padding: 10%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    cursor: pointer;
+}
+.cb-nsfw-hide .icon {
+        font-size: 60px;
+        margin-right: 5%;
+    }
+.cb-nsfw-show {
+    background: transparent;
+    color: transparent;
+    display: none;
+}
+
+.cb-tab>input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.cb-tab {
+  width: 100%;
+  color: var(--button-primary-bg-active) !important;
+  overflow: hidden;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: transparent;
+    font-weight: 400;
+    font-size: 1.2em;
+    font-family: inherit;
+    cursor: pointer;
+    /* Icon */
+    &:hover {
+      color: var(--button-primary-bg-hover) !important;
+    }
+    &::after {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all .35s;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: var(--text-color);
+    background: transparent;
+    transition: all .35s;
+    border-bottom: 1px solid hsl(240, 5%, 91%) !important;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: transparent;
+    cursor: pointer;
+    &:hover {
+      
+    }
+  }
+}
+
+// :checked
+.cb-tab>input:checked {
+  + .cb-tab-label {
+    color: var(--button-primary-bg) !important;
+    font-weight: 700;
+    border-bottom: 1px solid hsl(240, 5%, 91%) !important;
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .cb-tab-content {
+    max-height: 100vh;
+    padding: 1em;
+    border-bottom: 1px solid var(--button-primary-bg) !important;
+  }
+}
